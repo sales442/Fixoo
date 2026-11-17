@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixoo - Never Drop Your Glasses Again | 3-in-1 Anti-Drop Eyeglass Kit</title>
+    <meta name="description" content="The 3-in-1 magnetic system trusted by 10,000+ people. Protect your glasses for just $19.99 with 30-day money-back guarantee!">
+    
+    <!-- Optional: Add Brahma Rounded font for branding (uncomment if you have the font file) -->
+    <!--
+    <style>
+        @font-face {
+            font-family: 'Brahma Rounded';
+            src: url('BrahmaRounded-SemiBold.woff2') format('woff2'),
+                 url('BrahmaRounded-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-display: swap;
+        }
+    </style>
+    -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* System fonts for performance and conversion */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+
+        /* Use Brahma Rounded for main headlines (brand consistency) */
+        /* Uncomment when you add the font file */
+        /*
+        h1, h2, .hero-headline-large, .section-title {
+            font-family: 'Brahma Rounded', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Video Hero Section */
+        .hero-section-video {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+        }
+
+        .hero-video-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        /* Desktop/Tablet Video */
+        .video-placeholder-desktop {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 4px solid #10b981;
+        }
+
+        /* Mobile Video (9:16 portrait) */
+        .video-placeholder-mobile {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            aspect-ratio: 9/16;
+            background: #000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 4px solid #10b981;
+        }
+
+        /* Show mobile video on mobile devices */
+        @media (max-width: 768px) {
+            .video-placeholder-desktop {
+                display: none;
+            }
+            .video-placeholder-mobile {
+                display: flex;
+            }
+        }
+
+        .video-play-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(16, 185, 129, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-icon:hover {
+            transform: scale(1.1);
+            background: #10b981;
+        }
+
+        .play-triangle {
+            width: 0;
+            height: 0;
+            border-left: 30px solid white;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            margin-left: 8px;
+        }
+
+        .video-label {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .video-instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.85);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            border-left: 4px solid #10b981;
+        }
+
+        .video-instructions strong {
+            color: #10b981;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .hero-content-compact {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-headline-large {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-subheadline-compact {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-price-box {
+            background: white;
+            color: #1f2937;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .price-original {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #9ca3af;
+        }
+
+        .price-current {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #1e40af;
+        }
+
+        .price-badge {
+            background: #10b981;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .hero-cta-large {
+            width: 100%;
+            padding: 25px 50px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .hero-cta-large:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .hero-guarantee {
+            font-size: 1.1rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .trust-badges-hero {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Quick Benefits */
+        .quick-benefits {
+            background: #f9fafb;
+            padding: 40px 20px;
+            border-bottom: 3px solid #10b981;
+        }
+
+        .benefits-grid-compact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-item-compact {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .benefit-icon-large {
+            font-size: 2.5rem;
+        }
+
+        .benefit-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
+
+        /* How It Works Visual */
+        .how-it-works-visual {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #6b7280;
+            margin-bottom: 60px;
+        }
+
+        .features-visual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-visual-card {
+            background: #f9fafb;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .feature-visual-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: #1e40af;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .feature-emoji-large {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title-bold {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        .feature-description {
+            color: #4b5563;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .feature-benefit-badge {
+            background: #10b981;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .feature-image-placeholder {
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+            padding: 80px 20px;
+            border-radius: 15px;
+            color: #6b7280;
+            margin-top: 20px;
+            border: 3px dashed #9ca3af;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-image-placeholder::before {
+            content: "📸";
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .placeholder-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        .placeholder-hint {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        /* Social Proof */
+        .social-proof-section {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+
+        .rating-display-large {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .stars-large {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .star-icon {
+            font-size: 2.5rem;
+            color: #fbbf24;
+        }
+
+        .rating-text-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.5rem;
+        }
+
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1f2937;
+        }
+
+        .rating-count {
+            color: #6b7280;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .star-small {
+            font-size: 1.1rem;
+            color: #fbbf24;
+        }
+
+        .review-text {
+            color: #4b5563;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .verified-badge {
+            background: #10b981;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-left: 10px;
+        }
+
+        .review-location {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Who It's For */
+        .who-its-for {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .personas-grid-compact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        /* Mobile: 2 columns of 3 rows */
+        @media (max-width: 768px) {
+            .personas-grid-compact {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .persona-card-compact {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f9fafb;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .persona-card-compact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .persona-emoji-large {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .persona-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+
+        .persona-description {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        /* Urgency Section */
+        .urgency-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            text-align: center;
+        }
+
+        .urgency-headline {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #dc2626;
+            margin-bottom: 15px;
+        }
+
+        .urgency-subheadline {
+            font-size: 1.3rem;
+            color: #991b1b;
+            margin-bottom: 40px;
+        }
+
+        .countdown-box {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .countdown-label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            display: block;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #dc2626;
+            line-height: 1;
+        }
+
+        .countdown-text {
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stock-alert {
+            background: #dc2626;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .guarantee-icon {
+            width: 100px;
+            height: 100px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 3rem;
+        }
+
+        .guarantee-description {
+            max-width: 700px;
+            margin: 20px auto;
+            font-size: 1.3rem;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .guarantee-tagline {
+            font-style: italic;
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* Final CTA */
+        .final-cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta-headline {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .final-cta-subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.95;
+        }
+
+        .pricing-box-large {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            color: #1f2937;
+            padding: 60px 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .price-display-large {
+            margin-bottom: 20px;
+        }
+
+        .price-label {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-right: 10px;
+        }
+
+        .price-original-large {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #9ca3af;
+        }
+
+        .price-current-large {
+            font-size: 5rem;
+            font-weight: 800;
+            color: #1e40af;
+            margin: 20px 0;
+            line-height: 1;
+        }
+
+        .savings-badge-large {
+            background: #10b981;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        .features-list {
+            text-align: left;
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+
+        .feature-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 1.1rem;
+            color: #4b5563;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .buy-button-large {
+            width: 100%;
+            padding: 25px 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 30px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .buy-button-large:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .secure-text {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .trust-badges-final {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .trust-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4b5563;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer-section {
+            background: #111827;
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .footer-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #9ca3af;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .instagram-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .instagram-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .separator {
+            color: #4b5563;
+        }
+
+        .footer-copyright {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-headline-large {
+                font-size: 2.2rem;
+            }
+
+            .hero-subheadline-compact {
+                font-size: 1.1rem;
+            }
+
+            .price-current {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta-large {
+                padding: 20px 30px;
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .features-visual-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown {
+                gap: 15px;
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .price-current-large {
+                font-size: 3rem;
+            }
+
+            .pricing-box-large {
+                padding: 40px 25px;
+            }
+
+            .buy-button-large {
+                padding: 20px 30px;
+                font-size: 1.2rem;
+            }
+
+            .trust-badges-final {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .video-instructions {
+                font-size: 0.75rem;
+                padding: 12px;
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+            }
+
+            .video-label {
+                font-size: 1.2rem;
+            }
+
+            .video-play-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .play-triangle {
+                border-left: 20px solid white;
+                border-top: 13px solid transparent;
+                border-bottom: 13px solid transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Hero Section -->
+    <section class="hero-section-video">
+        <div class="hero-video-container">
+            <!-- Desktop/Tablet Video (16:9 Landscape) -->
+            <div class="video-wrapper">
+                <div class="video-placeholder-desktop">
+                    <div class="video-play-icon">
+                        <div class="play-triangle"></div>
+                    </div>
+                    <p class="video-label">Watch How Fixoo Protects Your Glasses</p>
+                    
+                    <div class="video-instructions">
+                        <strong>📹 DESKTOP VIDEO (16:9 Landscape - 30-45s)</strong>
+                        Replace with your horizontal video for desktop/tablet
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Video (9:16 Portrait) -->
+            <div class="video-wrapper">
+                <div class="video-placeholder-mobile">
+                    <div class="video-play-icon">
+                        <div class="play-triangle"></div>
+                    </div>
+                    <p class="video-label">Watch How Fixoo Works</p>
+                    
+                    <div class="video-instructions">
+                        <strong>📱 MOBILE VIDEO (9:16 Portrait)</strong>
+                        Vertical video optimized for mobile
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content-compact">
+                <h1 class="hero-headline-large">Never Drop, Lose, or Break Your Glasses Again</h1>
+                <p class="hero-subheadline-compact">The 3-in-1 magnetic system trusted by 10,000+ people</p>
+                
+                <!-- Price Box -->
+                <div class="hero-price-box">
+                    <div class="price-row">
+                        <span class="price-original">$24.99</span>
+                        <span class="price-current">$19.99</span>
+                        <span class="price-badge">25% OFF</span>
+                    </div>
+                    <button class="hero-cta-large" onclick="window.location.href='https://hmnwyp-ai.myshopify.com/products/fixoo-sunglass-holder-kit?variant=52737928069484'">
+                        🛒 GET FIXOO NOW - 25% OFF
+                    </button>
+                    <p class="hero-guarantee">🛡️ 30-Day Money-Back Guarantee</p>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges-hero">
+                    <span class="trust-badge">✓ Free Shipping</span>
+                    <span class="trust-badge">✓ 1,200+ 5-Star Reviews</span>
+                    <span class="trust-badge">✓ Made in USA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Benefits -->
+    <section class="quick-benefits">
+        <div class="container">
+            <div class="benefits-grid-compact">
+                <div class="benefit-item-compact">
+                    <span class="benefit-icon-large">🛡️</span>
+                    <span class="benefit-text">No More Broken Glasses</span>
+                </div>
+                <div class="benefit-item-compact">
+                    <span class="benefit-icon-large">⚡</span>
+                    <span class="benefit-text">Always Within Reach</span>
+                </div>
+                <div class="benefit-item-compact">
+                    <span class="benefit-icon-large">❤️</span>
+                    <span class="benefit-text">Works for Everyone</span>
+                </div>
+                <div class="benefit-item-compact">
+                    <span class="benefit-icon-large">✓</span>
+                    <span class="benefit-text">30-Day Guarantee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Visual -->
+    <section class="how-it-works-visual">
+        <div class="container">
+            <h2 class="section-title">3 Ways to Protect Your Glasses</h2>
+            <p class="section-subtitle">One simple kit. Three game-changing solutions.</p>
+            
+            <div class="features-visual-grid">
+                <!-- Feature 1 -->
+                <div class="feature-visual-card">
+                    <div class="feature-number">1</div>
+                    <div class="feature-emoji-large">👔</div>
+                    <h3 class="feature-title-bold">Clip to Your Shirt</h3>
+                    <p class="feature-description">Magnetic clip holds glasses securely on your collar. No more pocket scratches.</p>
+                    <div class="feature-benefit-badge">Perfect for reading glasses</div>
+                    
+                    <!-- Image Placeholder -->
+                    <div class="feature-image-placeholder">
+                        <p class="placeholder-text">ADD PHOTO HERE</p>
+                        <p class="placeholder-hint">Show magnetic clip on shirt with glasses</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-visual-card">
+                    <div class="feature-number">2</div>
+                    <div class="feature-emoji-large">🏃</div>
+                    <h3 class="feature-title-bold">Grip During Activity</h3>
+                    <p class="feature-description">Temple grips keep glasses on during workouts, sports, or chasing kids.</p>
+                    <div class="feature-benefit-badge">Stay locked in place</div>
+                    
+                    <!-- Image Placeholder -->
+                    <div class="feature-image-placeholder">
+                        <p class="placeholder-text">ADD PHOTO HERE</p>
+                        <p class="placeholder-hint">Show person wearing glasses during activity</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-visual-card">
+                    <div class="feature-number">3</div>
+                    <div class="feature-emoji-large">🚗</div>
+                    <h3 class="feature-title-bold">Park in Your Car</h3>
+                    <p class="feature-description">Visor clip gives glasses a proper home. No more center console chaos.</p>
+                    <div class="feature-benefit-badge">Always know where they are</div>
+                    
+                    <!-- Image Placeholder -->
+                    <div class="feature-image-placeholder">
+                        <p class="placeholder-text">ADD PHOTO HERE</p>
+                        <p class="placeholder-hint">Show glasses clipped to car visor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof-section">
+        <div class="container">
+            <h2 class="section-title">Join 10,000+ Happy Customers</h2>
+            
+            <!-- Rating Display -->
+            <div class="rating-display-large">
+                <div class="stars-large">
+                    <span class="star-icon">★</span>
+                    <span class="star-icon">★</span>
+                    <span class="star-icon">★</span>
+                    <span class="star-icon">★</span>
+                    <span class="star-icon">★</span>
+                </div>
+                <div class="rating-text-large">
+                    <span class="rating-number">4.9</span>
+                    <span class="rating-count">(1,247 reviews)</span>
+                </div>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star-small">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Game changer! I'm a nurse and constantly taking my glasses on and off. Haven't dropped them once since getting Fixoo."</p>
+                    <p class="review-author">Sarah K. <span class="verified-badge">✓ Verified</span></p>
+                    <p class="review-location">California</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star-small">★★★★★</span>
+                    </div>
+                    <p class="review-text">"My kids are tiny tornadoes. My glasses used to be collateral damage. Not anymore. Worth every penny!"</p>
+                    <p class="review-author">Mark T. <span class="verified-badge">✓ Verified</span></p>
+                    <p class="review-location">Texas</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star-small">★★★★★</span>
+                    </div>
+                    <p class="review-text">"I run every morning and my glasses used to bounce around. The temple grips changed everything. They don't budge."</p>
+                    <p class="review-author">David R. <span class="verified-badge">✓ Verified</span></p>
+                    <p class="review-location">Colorado</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star-small">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Finally, a solution that actually works! The car clip alone is worth the price. No more searching for my glasses."</p>
+                    <p class="review-author">Jennifer L. <span class="verified-badge">✓ Verified</span></p>
+                    <p class="review-location">Florida</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star-small">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Skeptical at first, but this thing delivers. Magnetic hold is strong, design is sleek. Highly recommend."</p>
+                    <p class="review-author">Robert M. <span class="verified-badge">✓ Verified</span></p>
+                    <p class="review-location">Washington</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <span class="star-small">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Best $20 I've spent. Saved me from buying new glasses after dropping them for the millionth time."</p>
+                    <p class="review-author">Lisa P. <span class="verified-badge">✓ Verified</span></p>
+                    <p class="review-location">Arizona</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For (5 personas for 2x3 mobile grid) -->
+    <section class="who-its-for">
+        <div class="container">
+            <h2 class="section-title">Perfect For Everyone Who Wears Glasses</h2>
+            
+            <div class="personas-grid-compact">
+                <div class="persona-card-compact">
+                    <div class="persona-emoji-large">🏃‍♂️</div>
+                    <h3 class="persona-title">Athletes</h3>
+                    <p class="persona-description">Focus on performance</p>
+                </div>
+
+                <div class="persona-card-compact">
+                    <div class="persona-emoji-large">👨‍👩‍👧‍👦</div>
+                    <h3 class="persona-title">Parents</h3>
+                    <p class="persona-description">Survive the chaos</p>
+                </div>
+
+                <div class="persona-card-compact">
+                    <div class="persona-emoji-large">👴</div>
+                    <h3 class="persona-title">Seniors</h3>
+                    <p class="persona-description">Never lose readers</p>
+                </div>
+
+                <div class="persona-card-compact">
+                    <div class="persona-emoji-large">🎓</div>
+                    <h3 class="persona-title">Students</h3>
+                    <p class="persona-description">Study without worry</p>
+                </div>
+
+                <div class="persona-card-compact">
+                    <div class="persona-emoji-large">👶</div>
+                    <h3 class="persona-title">Kids</h3>
+                    <p class="persona-description">Protect expensive frames</p>
+                </div>
+
+                <!-- Empty slot for 2x3 grid on mobile -->
+                <div class="persona-card-compact" style="visibility: hidden;">
+                    <div class="persona-emoji-large">🚀</div>
+                    <h3 class="persona-title">Placeholder</h3>
+                    <p class="persona-description">Hidden</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency -->
+    <section class="urgency-section">
+        <div class="container">
+            <h2 class="urgency-headline">Limited Time Offer</h2>
+            <p class="urgency-subheadline">25% off won't last forever</p>
+            
+            <div class="countdown-box">
+                <div class="countdown-label">SALE ENDS IN:</div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">02</span>
+                        <span class="countdown-text">HOURS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">30</span>
+                        <span class="countdown-text">MINUTES</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-text">SECONDS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stock-alert">⚠️ Only 47 units left at this price!</div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-icon">🛡️</div>
+            <h2 class="section-title">Zero Risk. 100% Guaranteed.</h2>
+            <p class="guarantee-description">Try Fixoo for 30 days. If you don't love it, we'll refund every penny. No questions asked.</p>
+            <p class="guarantee-tagline">You literally have nothing to lose</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="order" class="final-cta-section">
+        <div class="container">
+            <h2 class="final-cta-headline">Protect Your Glasses Today</h2>
+            <p class="final-cta-subheadline">Join 10,000+ people who never worry about broken glasses</p>
+            
+            <div class="pricing-box-large">
+                <div class="price-display-large">
+                    <span class="price-label">Regular Price:</span>
+                    <span class="price-original-large">$24.99</span>
+                </div>
+                
+                <div class="price-current-large">$19.99</div>
+                
+                <div class="savings-badge-large">SAVE 25%</div>
+                
+                <div class="features-list">
+                    <div class="feature-item">✓ Complete 3-in-1 Kit</div>
+                    <div class="feature-item">✓ Premium Magnetic Technology</div>
+                    <div class="feature-item">✓ 30-Day Money-Back Guarantee</div>
+                    <div class="feature-item">✓ Free Shipping Over $25</div>
+                </div>
+                
+                <button class="buy-button-large" onclick="window.location.href='https://hmnwyp-ai.myshopify.com/products/fixoo-sunglass-holder-kit?variant=52737928069484'">
+                    🛒 GET FIXOO NOW
+                </button>
+                
+                <p class="secure-text">🔒 Secure Checkout | SSL Encrypted</p>
+                
+                <div class="trust-badges-final">
+                    <div class="trust-badge-item">
+                        <span>🛡️</span>
+                        <span>30-Day Guarantee</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <span>✓</span>
+                        <span>Free Returns</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <span>★</span>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <p class="footer-label">Follow Us</p>
+            <a href="https://www.instagram.com/meufixoo/" target="_blank" class="instagram-link">
+                <svg class="instagram-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @meufixoo
+            </a>
+            
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#terms">Terms of Service</a>
+                <span class="separator">•</span>
+                <a href="#contact">Contact Us</a>
+            </div>
+            
+            <p class="footer-copyright">© 2025 Fixoo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        let timeLeft = {
+            hours: 2,
+            minutes: 30,
+            seconds: 0
+        };
+
+        function updateCountdown() {
+            if (timeLeft.seconds > 0) {
+                timeLeft.seconds--;
+            } else if (timeLeft.minutes > 0) {
+                timeLeft.minutes--;
+                timeLeft.seconds = 59;
+            } else if (timeLeft.hours > 0) {
+                timeLeft.hours--;
+                timeLeft.minutes = 59;
+                timeLeft.seconds = 59;
+            }
+
+            document.getElementById('hours').textContent = String(timeLeft.hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(timeLeft.minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(timeLeft.seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scroll
+        function scrollToOrder() {
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
